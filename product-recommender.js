@@ -49,13 +49,13 @@ var myAppJavaScript = function($){
   // Don't use $, or $191, use the dollar sign.
   // Do this and do that, using $.
   $('body').append('<p>Your app is using $ version '+$.fn.jquery+'</p>');
-  $('[data-prodrecomwrap]').each(function() {
+  $('[data-prod-recom-wrap]').each(function() {
     var prodRec = $(this);
-    var prodURL = '/products/' + $(this).data('prodrecomhandle');
+    var prodURL = '/products/' + $(this).data('prod-recom-handle');
     $.getJSON(prodURL + '.js', function(product) {
-      prodRec.find('[data-prodrecomtink]').attr('href', prodURL);
-      prodRec.find('[data-prodrecomtitle]').html(product.title);
-      prodRec.find('[data-prodrecomimg]').attr('src', product.images[0]);
+      prodRec.find('[data-prod-recom-link]').attr('href', prodURL);
+      prodRec.find('[data-prod-recom-title]').html(product.title);
+      prodRec.find('[data-prod-recom-img]').attr('src', product.images[0]);
     });
   });
 };
