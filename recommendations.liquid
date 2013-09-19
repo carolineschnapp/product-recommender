@@ -8,7 +8,7 @@ Please keep the data-X attributes in place, but feel free to edit everything els
   <h3>You might also like...</h3>
   <ul>
     {% for recommendation in product.metafields.recommendations %}
-    <li id="product-grid-item-{{ forloop.index0 }}" data-product-recommendation-wrapper data-product-recommendation-handle="{{ recommendation | first }}" data-product-recommendation-order="{{ forloop.index0 }}" class="{% if forloop.last %} last{% endif %}">
+    <li id="product-grid-item-{{ forloop.index0 }}" data-product-recommendation-wrapper data-product-recommendation-handle="{{ recommendation | last }}" data-product-recommendation-order="{{ forloop.index0 }}" class="{% if forloop.last %} last{% endif %}">
       <div class="prod-image-wrap">  
         <a data-product-recommendation-link href="">
           <img data-product-recommendation-img  src="" alt="" />
