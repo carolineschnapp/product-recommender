@@ -58,6 +58,7 @@ var myAppJavaScript = function($){
       prodRec.find('[data-product-recommendation-img]').attr('src', product.images[0]);
     });
   });
+  $('.hide-if-no-app-js').show();
 };
 
 /* If $ has not yet been loaded or if it has but it's too old for our needs,
