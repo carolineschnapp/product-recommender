@@ -1,0 +1,44 @@
+{% if template contains 'product' %}
+
+{% comment %}
+Please keep the data-X attributes in place, but feel free to edit everything else. Class names, IDs, markup.
+{% endcomment %}
+
+<div id="product-recommendations-wrapper" class="clearfix hide-if-no-app-js">
+  <h3>You might also like...</h3>
+  <ul>
+    {% for recommendation in product.metafields.recommendations %}
+    <li id="product-grid-item-{{ forloop.index0 }}" data-product-recommendation-wrapper data-product-recommendation-handle="{{ recommendation | first }}" data-product-recommendation-order="{{ forloop.index0 }}" class="{% if forloop.last %} last{% endif %}">
+      <div class="prod-image-wrap">  
+        <a data-product-recommendation-link href="">
+          <img data-product-recommendation-img  src="" alt="" />
+        </a>
+      </div><!-- .prod-image-wrap -->
+      <div class="prod-caption">
+        <a data-product-recommendation-link href="">
+          <span data-product-recommendation-title>
+          </span>
+        </a>
+      </div><!-- .prod-caption -->
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+  .clearfix:before, .clearfix:after { content: ""; display: table; }
+  .clearfix:after { clear: both; }
+  .clearfix { zoom: 1; }
+  .hide-if-no-app-js { display: none; }
+  #product-recommendations-wrapper { clear: both; margin: 2em 0; padding: 0; }
+  #product-recommendations-wrapper h3 { }
+  #product-recommendations-wrapper ul { clear: both; list-style-type: none; margin: 0.75em 0; padding: 0; }
+  #product-recommendations-wrapper li { list-style-type: none; width: 32%; margin-right: 2%; float: left; text-align: center; }
+  #product-recommendations-wrapper li.last { margin-right: 0; }
+  #product-recommendations-wrapper img { max-width: 100%; }
+  #product-recommendations-wrapper a { text-decoration: none; margin: 0.75em 0; }
+  #product-recommendations-wrapper span { margin: 0.75em 0; }
+  #product-recommendations-wrapper div { margin: 0.75em 0; }
+</style>
+
+{% endif %}
