@@ -1,4 +1,5 @@
-{% if template contains 'product' %}
+{% if template contains 'product'%}
+{% unless product.metafields.recommendations == empty %}
 
 {% comment %}
 Please keep the data-X attributes in place, but feel free to edit everything else. Class names, IDs, markup.
@@ -41,4 +42,5 @@ Please keep the data-X attributes in place, but feel free to edit everything els
   #product-recommendations-wrapper div { margin: 0.75em 0; }
 </style>
 
+{% endunless %}
 {% endif %}
